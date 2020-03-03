@@ -1,9 +1,8 @@
 package org.openclassroom.projet;
 
-import org.openclassroom.projet.jobs.BatchJob;
-import org.quartz.*;
-import org.quartz.impl.StdSchedulerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.openclassroom.projet.configs.BatchConfig;
+import org.quartz.Scheduler;
+import org.quartz.SchedulerException;
 
 /**
  * Hello world!
@@ -11,25 +10,15 @@ import org.springframework.beans.factory.annotation.Autowired;
  */
 public class App 
 {
-    @Autowired
-    private static SchedulerFactory schedulerFactory;
-
-    @Autowired
-    private static JobDetail job;
-
-    @Autowired
-    private static Trigger trigger;
-
     public static void main( String[] args )
     {
         try {
-
-            Scheduler sched = schedulerFactory.getScheduler();
-            sched.scheduleJob(job, trigger);
+            Scheduler sched = BatchConfig.getScheduler();
+            sched.scheduleJob(BatchConfig.getJobDetail(), BatchConfig.getTrigger());
             sched.start();
-
         } catch (SchedulerException e) {
             e.printStackTrace();
         }
     }
+
 }

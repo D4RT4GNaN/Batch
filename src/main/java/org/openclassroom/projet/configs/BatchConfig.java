@@ -1,43 +1,26 @@
 package org.openclassroom.projet.configs;
 
-import org.openclassroom.projet.jobs.BatchJob;
+import org.openclassroom.projet.triggers.BatchTrigger;
+import org.openclassroom.projet.jobs.BatchJobDetail;
 import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;
-import org.springframework.context.annotation.Bean;
 
 public class BatchConfig {
 
-    @Bean
-    public JobDetail jobDetail() {
-        JobDetail job = JobBuilder
-                .newJob(BatchJob.class)
-                .withIdentity("myJob", "group1")
-                .usingJobData("jobSays", "Hello World!")
-                .usingJobData("myFloatValue", 3.141f)
-                .build();
+    private static BatchTrigger trigger = new BatchTrigger();
+    private static BatchJobDetail jobDetail = new BatchJobDetail();
+    private static SchedulerFactory schedulerFactory = new StdSchedulerFactory();
 
-        return job;
+    public static Trigger getTrigger() {
+        return trigger.getTrigger();
     }
 
-    @Bean
-    public Trigger trigger() {
-        Trigger trigger = TriggerBuilder
-                .newTrigger()
-                .withIdentity("myTrigger", "group1")
-                .startNow()
-                .withSchedule(
-                        SimpleScheduleBuilder
-                                .simpleSchedule()
-                                .withIntervalInSeconds(40)
-                                .repeatForever()
-                )
-                .build();
-        return trigger;
+    public static JobDetail getJobDetail() {
+        return jobDetail.getJobDetail();
     }
 
-    @Bean
-    public SchedulerFactory schedulerFactory() {
-        return new StdSchedulerFactory();
+    public static Scheduler getScheduler() throws SchedulerException {
+        return schedulerFactory.getScheduler();
     }
 
 }
