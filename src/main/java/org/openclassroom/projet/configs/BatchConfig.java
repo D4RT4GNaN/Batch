@@ -1,7 +1,7 @@
 package org.openclassroom.projet.configs;
 
-import org.openclassroom.projet.triggers.BatchTrigger;
 import org.openclassroom.projet.jobs.BatchJobDetail;
+import org.openclassroom.projet.triggers.BatchTrigger;
 import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;
 

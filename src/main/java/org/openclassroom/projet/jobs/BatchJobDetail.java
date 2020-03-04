@@ -11,8 +11,7 @@ public class BatchJobDetail {
         jobDetail = JobBuilder
                 .newJob(BatchJob.class)
                 .withIdentity("myJob", "group1")
-                .usingJobData("jobSays", "Hello World!")
-                .usingJobData("myFloatValue", 3.141f)
+                .usingJobData("jobName", "Checking Loan")
                 .build();
     }
 
