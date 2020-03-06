@@ -4,25 +4,41 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
+  <!-- =============================================================== -->
+  <!-- Project Information's -->
+  <!-- =============================================================== -->
+  <!-- ===== Maven Information's ===== -->
   <groupId>org.openclassroom.projet</groupId>
   <artifactId>batch</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0-RELEASE</version>
 
+  <!-- ===== General Information's ===== -->
   <name>batch</name>
 
+
+  <!-- =============================================================== -->
+  <!-- Properties -->
+  <!-- =============================================================== -->
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
 
+
+  <!-- =============================================================== -->
+  <!-- Dependencies -->
+  <!-- =============================================================== -->
   <dependencies>
+    <!-- Quartz Scheduler API -->
     <dependency>
       <groupId>org.quartz-scheduler</groupId>
       <artifactId>quartz</artifactId>
       <version>2.3.2</version>
     </dependency>
 
+    <!-- ===== LOGGERS ===== -->
+    <!-- Log4J2 -->
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j</artifactId>
@@ -30,18 +46,21 @@
       <type>pom</type>
     </dependency>
 
+    <!-- SLF4J -->
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
       <version>1.7.28</version>
     </dependency>
 
+    <!-- Log4j2-SLF4J Binding Implementation -->
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-slf4j-impl</artifactId>
       <version>2.13.1</version>
     </dependency>
 
+    <!-- JUnit -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -50,6 +69,10 @@
     </dependency>
   </dependencies>
 
+
+  <!-- =============================================================== -->
+  <!-- Build and Plugins -->
+  <!-- =============================================================== -->
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
