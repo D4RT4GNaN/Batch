@@ -1,0 +1,47 @@
+2020-03-06 09:22:14 INFO  Using default implementation for ThreadExecutor
+2020-03-06 09:22:14 INFO  Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-03-06 09:22:14 INFO  Quartz Scheduler v.2.3.2 created.
+2020-03-06 09:22:14 INFO  RAMJobStore initialized.
+2020-03-06 09:22:14 INFO  Scheduler meta-data: Quartz Scheduler (v2.3.2) 'MyScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 1 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-03-06 09:22:14 INFO  Quartz scheduler 'MyScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2020-03-06 09:22:14 INFO  Quartz scheduler version: 2.3.2
+2020-03-06 09:22:14 INFO  Scheduler MyScheduler_$_NON_CLUSTERED started.
+2020-03-06 09:22:14 DEBUG batch acquisition of 1 triggers
+2020-03-06 09:22:14 DEBUG Producing instance of Job 'group1.myJob', class=org.openclassroom.projet.jobs.BatchJob
+2020-03-06 09:22:15 DEBUG Calling execute on job group1.myJob
+2020-03-06 09:22:15 INFO  --------------------------------------------------------------------
+2020-03-06 09:22:15 INFO  Job start: Fri Mar 06 09:22:14 GMT+01:00 2020
+2020-03-06 09:22:15 INFO  Job name is: Checking Loan
+2020-03-06 09:22:25 INFO   * - A mail was sent to user 4 for book with the reference DWVKBC
+2020-03-06 09:22:25 INFO   * - A mail was sent to user 4 for book with the reference F4BOEX
+2020-03-06 09:22:25 INFO   * - A mail was sent to user 4 for book with the reference UEGU93
+2020-03-06 09:22:25 INFO   * - A mail was sent to user 4 for book with the reference D6FDSR
+2020-03-06 09:22:25 INFO  Job end: -1, key: group1.myJob
+2020-03-06 09:22:25 INFO  Job next scheduled time: Fri Mar 06 09:22:34 GMT+01:00 2020
+2020-03-06 09:22:25 INFO  --------------------------------------------------------------------
+2020-03-06 09:22:25 DEBUG batch acquisition of 1 triggers
+2020-03-06 09:22:34 DEBUG Producing instance of Job 'group1.myJob', class=org.openclassroom.projet.jobs.BatchJob
+2020-03-06 09:22:34 DEBUG Calling execute on job group1.myJob
+2020-03-06 09:22:34 INFO  --------------------------------------------------------------------
+2020-03-06 09:22:34 INFO  Job start: Fri Mar 06 09:22:34 GMT+01:00 2020
+2020-03-06 09:22:34 INFO  Job name is: Checking Loan
+2020-03-06 09:22:47 INFO   * - A mail was sent to user 4 for book with the reference DWVKBC
+2020-03-06 09:22:47 INFO   * - A mail was sent to user 4 for book with the reference F4BOEX
+2020-03-06 09:22:47 INFO   * - A mail was sent to user 4 for book with the reference UEGU93
+2020-03-06 09:22:47 INFO   * - A mail was sent to user 4 for book with the reference D6FDSR
+2020-03-06 09:22:47 INFO  Job end: -1, key: group1.myJob
+2020-03-06 09:22:47 INFO  Job next scheduled time: Fri Mar 06 09:22:54 GMT+01:00 2020
+2020-03-06 09:22:47 INFO  --------------------------------------------------------------------
+2020-03-06 09:22:47 DEBUG batch acquisition of 1 triggers
+2020-03-06 09:22:54 DEBUG Producing instance of Job 'group1.myJob', class=org.openclassroom.projet.jobs.BatchJob
+2020-03-06 09:22:54 DEBUG Calling execute on job group1.myJob
+2020-03-06 09:22:54 INFO  --------------------------------------------------------------------
+2020-03-06 09:22:54 INFO  Job start: Fri Mar 06 09:22:54 GMT+01:00 2020
+2020-03-06 09:22:54 INFO  Job name is: Checking Loan
