@@ -11,11 +11,23 @@ import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
+/**
+ * ----------------------------------------
+ *         Class running a job
+ * ----------------------------------------
+ */
 public class BatchJob implements Job {
 
+    // ------------------------- Attributes --------------------------
+    // Web Service Interface
     private LibraryService libraryService = new LibraryServiceService().getLibraryServicePort();
+
+    // SLF4J Logger associated in background with Log4J2
     private static Logger LOGGER = LoggerFactory.getLogger(BatchJob.class);
 
+
+    // -------------------------- Methods ----------------------------
+    // Job calling checkExpiration method that returns a list of emails sent
     @Override
     public void execute(JobExecutionContext context) {
         LOGGER.info("--------------------------------------------------------------------");

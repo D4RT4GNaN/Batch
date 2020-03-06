@@ -5,8 +5,8 @@ import org.quartz.Scheduler;
 import org.quartz.SchedulerException;
 
 /**
- * Hello world!
- *
+ * Main Class App
+ * Starter of Quartz Scheduler
  */
 public class App 
 {

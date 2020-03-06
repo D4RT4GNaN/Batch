@@ -10,15 +10,20 @@ import javax.script.ScriptException;
 import java.io.IOException;
 import java.util.Properties;
 
+/**
+ * ----------------------------------------------------
+ *     Config Class for Trigger with TriggerBuilder
+ * ----------------------------------------------------
+ */
 public class BatchTrigger {
 
+    // ------------------------ Attributes ---------------------------
     private Trigger trigger;
 
-    public Trigger getTrigger() {
-        return trigger;
-    }
 
+    // ----------------------- Constructor ---------------------------
     public BatchTrigger() {
+        // New trigger with simple scheduler that repeats itself every x amount of time, every time
         this.trigger = TriggerBuilder
                 .newTrigger()
                 .withIdentity("myTrigger", "group1")
@@ -32,6 +37,15 @@ public class BatchTrigger {
                 .build();
     }
 
+
+    // -------------------------- Getter -----------------------------
+    public Trigger getTrigger() {
+        return trigger;
+    }
+
+
+    // --------------------- Privates Methods ------------------------
+    // Return the value of batch.scheduler.intervalTimeInSecond in String
     private String getProperties() {
         Properties properties = new Properties();
 
@@ -44,6 +58,7 @@ public class BatchTrigger {
         return properties.getProperty("batch.scheduler.intervalTimeInSecond");
     }
 
+    // Convert the String value of batch.scheduler.intervalTimeInSecond in int value
     private int getIntervalInSeconds() {
         ScriptEngineManager mgr = new ScriptEngineManager();
         ScriptEngine engine = mgr.getEngineByName("JavaScript");
