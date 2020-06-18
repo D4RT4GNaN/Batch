@@ -1,8 +1,9 @@
 package org.openclassroom.projet.jobs;
 
-import generated.libraryservice.LibraryService;
-import generated.libraryservice.LibraryServiceService;
-import generated.libraryservice.Loan;
+import generatedlibraryservice.GeneratedBook;
+import generatedlibraryservice.GeneratedBorrowing;
+import generatedlibraryservice.LibraryService;
+import generatedlibraryservice.LibraryServiceService;
 import org.quartz.Job;
 import org.quartz.JobDetail;
 import org.quartz.JobExecutionContext;
@@ -35,10 +36,10 @@ public class BatchJob implements Job {
         JobDetail jobDetail = context.getJobDetail();
         LOGGER.info("Job name is: " + jobDetail.getJobDataMap().getString("jobName"));
 
-        List<Loan> loansOverdue = libraryService.checkExpiration();
+        List<GeneratedBorrowing> borrowingsOverdue = libraryService.checkExpiration();
 
-        for(Loan loan : loansOverdue) {
-            LOGGER.info(" * - A mail was sent to user " + loan.getUserID() + " for book with the reference " + loan.getBookReference());
+        for(GeneratedBorrowing generatedBorrowing : borrowingsOverdue) {
+            LOGGER.info(" * - A mail was sent to user " + generatedBorrowing.getUsager().getId() + " for book with the reference " + generatedBorrowing.getBook().getReference());
         }
 
         LOGGER.info("Job end: " + context.getJobRunTime() + ", key: " + jobDetail.getKey());

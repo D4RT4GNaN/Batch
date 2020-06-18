@@ -25,7 +25,7 @@ public class BatchJobDetail {
         jobDetail = JobBuilder
                 .newJob(BatchJob.class)
                 .withIdentity("myJob", "group1")
-                .usingJobData("jobName", "Checking Loan")
+                .usingJobData("jobName", "Checking Borrowing")
                 .build();
     }
 
