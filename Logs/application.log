@@ -1,8 +1,8 @@
-2020-03-06 09:22:14 INFO  Using default implementation for ThreadExecutor
-2020-03-06 09:22:14 INFO  Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2020-03-06 09:22:14 INFO  Quartz Scheduler v.2.3.2 created.
-2020-03-06 09:22:14 INFO  RAMJobStore initialized.
-2020-03-06 09:22:14 INFO  Scheduler meta-data: Quartz Scheduler (v2.3.2) 'MyScheduler' with instanceId 'NON_CLUSTERED'
+2020-06-18 17:23:15 INFO  Using default implementation for ThreadExecutor
+2020-06-18 17:23:15 INFO  Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-06-18 17:23:15 INFO  Quartz Scheduler v.2.3.2 created.
+2020-06-18 17:23:15 INFO  RAMJobStore initialized.
+2020-06-18 17:23:15 INFO  Scheduler meta-data: Quartz Scheduler (v2.3.2) 'MyScheduler' with instanceId 'NON_CLUSTERED'
   Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
   NOT STARTED.
   Currently in standby mode.
@@ -10,38 +10,86 @@
   Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 1 threads.
   Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
 
-2020-03-06 09:22:14 INFO  Quartz scheduler 'MyScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
-2020-03-06 09:22:14 INFO  Quartz scheduler version: 2.3.2
-2020-03-06 09:22:14 INFO  Scheduler MyScheduler_$_NON_CLUSTERED started.
-2020-03-06 09:22:14 DEBUG batch acquisition of 1 triggers
-2020-03-06 09:22:14 DEBUG Producing instance of Job 'group1.myJob', class=org.openclassroom.projet.jobs.BatchJob
-2020-03-06 09:22:15 DEBUG Calling execute on job group1.myJob
-2020-03-06 09:22:15 INFO  --------------------------------------------------------------------
-2020-03-06 09:22:15 INFO  Job start: Fri Mar 06 09:22:14 GMT+01:00 2020
-2020-03-06 09:22:15 INFO  Job name is: Checking Loan
-2020-03-06 09:22:25 INFO   * - A mail was sent to user 4 for book with the reference DWVKBC
-2020-03-06 09:22:25 INFO   * - A mail was sent to user 4 for book with the reference F4BOEX
-2020-03-06 09:22:25 INFO   * - A mail was sent to user 4 for book with the reference UEGU93
-2020-03-06 09:22:25 INFO   * - A mail was sent to user 4 for book with the reference D6FDSR
-2020-03-06 09:22:25 INFO  Job end: -1, key: group1.myJob
-2020-03-06 09:22:25 INFO  Job next scheduled time: Fri Mar 06 09:22:34 GMT+01:00 2020
-2020-03-06 09:22:25 INFO  --------------------------------------------------------------------
-2020-03-06 09:22:25 DEBUG batch acquisition of 1 triggers
-2020-03-06 09:22:34 DEBUG Producing instance of Job 'group1.myJob', class=org.openclassroom.projet.jobs.BatchJob
-2020-03-06 09:22:34 DEBUG Calling execute on job group1.myJob
-2020-03-06 09:22:34 INFO  --------------------------------------------------------------------
-2020-03-06 09:22:34 INFO  Job start: Fri Mar 06 09:22:34 GMT+01:00 2020
-2020-03-06 09:22:34 INFO  Job name is: Checking Loan
-2020-03-06 09:22:47 INFO   * - A mail was sent to user 4 for book with the reference DWVKBC
-2020-03-06 09:22:47 INFO   * - A mail was sent to user 4 for book with the reference F4BOEX
-2020-03-06 09:22:47 INFO   * - A mail was sent to user 4 for book with the reference UEGU93
-2020-03-06 09:22:47 INFO   * - A mail was sent to user 4 for book with the reference D6FDSR
-2020-03-06 09:22:47 INFO  Job end: -1, key: group1.myJob
-2020-03-06 09:22:47 INFO  Job next scheduled time: Fri Mar 06 09:22:54 GMT+01:00 2020
-2020-03-06 09:22:47 INFO  --------------------------------------------------------------------
-2020-03-06 09:22:47 DEBUG batch acquisition of 1 triggers
-2020-03-06 09:22:54 DEBUG Producing instance of Job 'group1.myJob', class=org.openclassroom.projet.jobs.BatchJob
-2020-03-06 09:22:54 DEBUG Calling execute on job group1.myJob
-2020-03-06 09:22:54 INFO  --------------------------------------------------------------------
-2020-03-06 09:22:54 INFO  Job start: Fri Mar 06 09:22:54 GMT+01:00 2020
-2020-03-06 09:22:54 INFO  Job name is: Checking Loan
+2020-06-18 17:23:15 INFO  Quartz scheduler 'MyScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2020-06-18 17:23:15 INFO  Quartz scheduler version: 2.3.2
+2020-06-18 17:23:15 INFO  Scheduler MyScheduler_$_NON_CLUSTERED started.
+2020-06-18 17:23:15 DEBUG batch acquisition of 1 triggers
+2020-06-18 17:23:15 DEBUG Producing instance of Job 'group1.myJob', class=org.openclassroom.projet.jobs.BatchJob
+2020-06-18 17:23:17 ERROR An error occured instantiating job to be executed. job= 'group1.myJob'
+org.quartz.SchedulerException: Problem instantiating class 'org.openclassroom.projet.jobs.BatchJob'
+	at org.quartz.simpl.SimpleJobFactory.newJob(SimpleJobFactory.java:58) ~[quartz-2.3.2.jar:?]
+	at org.quartz.simpl.PropertySettingJobFactory.newJob(PropertySettingJobFactory.java:69) ~[quartz-2.3.2.jar:?]
+	at org.quartz.core.JobRunShell.initialize(JobRunShell.java:127) [quartz-2.3.2.jar:?]
+	at org.quartz.core.QuartzSchedulerThread.run(QuartzSchedulerThread.java:392) [quartz-2.3.2.jar:?]
+Caused by: javax.xml.ws.WebServiceException: Echec de l'accès au WSDL à http://localhost:8080/libraryservice-webservice/libraryservice?wsdl avec 
+	Connection refused: connect.
+	at com.sun.xml.internal.ws.wsdl.parser.RuntimeWSDLParser.tryWithMex(RuntimeWSDLParser.java:250) ~[?:1.8.0_201]
+	at com.sun.xml.internal.ws.wsdl.parser.RuntimeWSDLParser.parse(RuntimeWSDLParser.java:231) ~[?:1.8.0_201]
+	at com.sun.xml.internal.ws.wsdl.parser.RuntimeWSDLParser.parse(RuntimeWSDLParser.java:194) ~[?:1.8.0_201]
+	at com.sun.xml.internal.ws.wsdl.parser.RuntimeWSDLParser.parse(RuntimeWSDLParser.java:163) ~[?:1.8.0_201]
+	at com.sun.xml.internal.ws.client.WSServiceDelegate.parseWSDL(WSServiceDelegate.java:348) ~[?:1.8.0_201]
+	at com.sun.xml.internal.ws.client.WSServiceDelegate.<init>(WSServiceDelegate.java:306) ~[?:1.8.0_201]
+	at com.sun.xml.internal.ws.client.WSServiceDelegate.<init>(WSServiceDelegate.java:215) ~[?:1.8.0_201]
+	at com.sun.xml.internal.ws.client.WSServiceDelegate.<init>(WSServiceDelegate.java:196) ~[?:1.8.0_201]
+	at com.sun.xml.internal.ws.client.WSServiceDelegate.<init>(WSServiceDelegate.java:192) ~[?:1.8.0_201]
+	at com.sun.xml.internal.ws.spi.ProviderImpl.createServiceDelegate(ProviderImpl.java:104) ~[?:1.8.0_201]
+	at javax.xml.ws.Service.<init>(Service.java:77) ~[?:1.8.0_201]
+	at generated.libraryservice.LibraryServiceService.<init>(LibraryServiceService.java:42) ~[classes/:?]
+	at org.openclassroom.projet.jobs.BatchJob.<init>(BatchJob.java:23) ~[classes/:?]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_201]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_201]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_201]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[?:1.8.0_201]
+	at java.lang.Class.newInstance(Class.java:442) ~[?:1.8.0_201]
+	at org.quartz.simpl.SimpleJobFactory.newJob(SimpleJobFactory.java:56) ~[quartz-2.3.2.jar:?]
+	... 3 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method) ~[?:1.8.0_201]
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79) ~[?:1.8.0_201]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[?:1.8.0_201]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[?:1.8.0_201]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[?:1.8.0_201]
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172) ~[?:1.8.0_201]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[?:1.8.0_201]
+	at java.net.Socket.connect(Socket.java:589) ~[?:1.8.0_201]
+	at java.net.Socket.connect(Socket.java:538) ~[?:1.8.0_201]
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180) ~[?:1.8.0_201]
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463) ~[?:1.8.0_201]
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558) ~[?:1.8.0_201]
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242) ~[?:1.8.0_201]
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339) ~[?:1.8.0_201]
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357) ~[?:1.8.0_201]
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1220) ~[?:1.8.0_201]
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1156) ~[?:1.8.0_201]
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1050) ~[?:1.8.0_201]
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:984) ~[?:1.8.0_201]
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1564) ~[?:1.8.0_201]
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1492) ~[?:1.8.0_201]
+	at java.net.URL.openStream(URL.java:1045) ~[?:1.8.0_201]
+	at com.sun.xml.internal.ws.wsdl.parser.RuntimeWSDLParser.createReader(RuntimeWSDLParser.java:984) ~[?:1.8.0_201]
+	at com.sun.xml.internal.ws.wsdl.parser.RuntimeWSDLParser.resolveWSDL(RuntimeWSDLParser.java:385) ~[?:1.8.0_201]
+	at com.sun.xml.internal.ws.wsdl.parser.RuntimeWSDLParser.parse(RuntimeWSDLParser.java:216) ~[?:1.8.0_201]
+	at com.sun.xml.internal.ws.wsdl.parser.RuntimeWSDLParser.parse(RuntimeWSDLParser.java:194) ~[?:1.8.0_201]
+	at com.sun.xml.internal.ws.wsdl.parser.RuntimeWSDLParser.parse(RuntimeWSDLParser.java:163) ~[?:1.8.0_201]
+	at com.sun.xml.internal.ws.client.WSServiceDelegate.parseWSDL(WSServiceDelegate.java:348) ~[?:1.8.0_201]
+	at com.sun.xml.internal.ws.client.WSServiceDelegate.<init>(WSServiceDelegate.java:306) ~[?:1.8.0_201]
+	at com.sun.xml.internal.ws.client.WSServiceDelegate.<init>(WSServiceDelegate.java:215) ~[?:1.8.0_201]
+	at com.sun.xml.internal.ws.client.WSServiceDelegate.<init>(WSServiceDelegate.java:196) ~[?:1.8.0_201]
+	at com.sun.xml.internal.ws.client.WSServiceDelegate.<init>(WSServiceDelegate.java:192) ~[?:1.8.0_201]
+	at com.sun.xml.internal.ws.spi.ProviderImpl.createServiceDelegate(ProviderImpl.java:104) ~[?:1.8.0_201]
+	at javax.xml.ws.Service.<init>(Service.java:77) ~[?:1.8.0_201]
+	at generated.libraryservice.LibraryServiceService.<init>(LibraryServiceService.java:42) ~[classes/:?]
+	at org.openclassroom.projet.jobs.BatchJob.<init>(BatchJob.java:23) ~[classes/:?]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_201]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_201]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_201]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[?:1.8.0_201]
+	at java.lang.Class.newInstance(Class.java:442) ~[?:1.8.0_201]
+	at org.quartz.simpl.SimpleJobFactory.newJob(SimpleJobFactory.java:56) ~[quartz-2.3.2.jar:?]
+	... 3 more
+2020-06-18 17:23:17 INFO  All triggers of Job group1.myJob set to ERROR state.
+2020-06-18 17:23:17 DEBUG batch acquisition of 0 triggers
+2020-06-18 17:23:41 DEBUG batch acquisition of 0 triggers
+2020-06-18 17:24:04 DEBUG batch acquisition of 0 triggers
+2020-06-18 17:24:28 DEBUG batch acquisition of 0 triggers
+2020-06-18 17:24:56 DEBUG batch acquisition of 0 triggers

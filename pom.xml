@@ -11,6 +11,7 @@
   <groupId>org.openclassroom.projet</groupId>
   <artifactId>batch</artifactId>
   <version>1.0-RELEASE</version>
+  <packaging>jar</packaging>
 
   <!-- ===== General Information's ===== -->
   <name>batch</name>
@@ -97,6 +98,15 @@
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.0.2</version>
+          <configuration>
+            <archive>
+              <manifest>
+                <mainClass>
+                  org.openclassroom.projet.App
+                </mainClass>
+              </manifest>
+            </archive>
+          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-install-plugin</artifactId>
